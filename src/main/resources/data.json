@@ -1,0 +1,195 @@
+{
+         "management": [
+            {
+               "name": "Ivan",
+               "surname": "Petrov",
+               "jobTitle": "CEO",
+               "address": {
+                  "region": "MINSK",
+                  "city": "Minsk",
+                  "street": "Nemiga",
+                  "building": "15",
+                  "zipcode": "220230"
+               },
+               "numberWorkAuto": "Porshe 666",
+               "dateOfBirth": "02.03.1964",
+			   "startJob": "15.09.2015"
+            },
+            {
+               "name": "Kolya",
+               "surname": "Ivanov",
+               "jobTitle": "COO",
+               "address": {
+                  "region": "MINSK",
+                  "city": "Minsk",
+                  "street": "Pionerskaya",
+                  "building": "38",
+                  "zipcode": "220030"
+               },
+               "numberWorkAuto": "Bently 5555",
+               "dateOfBirth": "02.03.1974",
+			   "startJob": "15.09.2015"
+            }
+         ],
+         "economist": [
+            {
+               "name": "Kate",
+               "surname": "Kozlova",
+               "jobTitle": "Chief Accountant",
+               "address": {
+                  "region": "MINSK",
+                  "city": "Minsk",
+                  "street": "Pobeda",
+                  "building": "36",
+                  "zipcode": "222030"
+               },
+               "dateOfBirth": "02.03.1974",
+			   "startJob": "15.09.2015"
+            },
+            {
+               "name": "Elena",
+               "surname": "Petrova",
+               "jobTitle": "Accountant",
+               "address": {
+                  "region": "MINSK",
+                  "city": "Minsk",
+                  "street": "Kozlova",
+                  "building": "15",
+                  "zipcode": "220062"
+               },
+               "dateOfBirth": "02.03.1974",
+			   "startJob": "15.09.2015"
+            }
+         ],
+         "managerProject": [
+            {
+               "name": "Alex",
+               "surname": "Davidov",
+               "jobTitle": "Progect manager",
+               "address": {
+                  "region": "MINSK",
+                  "city": "Minsk",
+                  "street": "Frunze",
+                  "building": "12",
+                  "zipcode": "220502"
+               },
+               "dateOfBirth": "02.03.1974",
+			   "startJob": "15.09.2015"
+            },
+            {
+               "name": "Alex",
+               "surname": "Pipkin",
+               "jobTitle": "Progect manager",
+               "address": {
+                  "region": "MINSK",
+                  "city": "Minsk",
+                  "street": "Nemiga",
+                  "building": "25",
+                  "zipcode": "220025"
+               },
+               "dateOfBirth": "02.03.1974",
+			   "startJob": "15.09.2015"
+            }
+         ],
+         "engineer": [
+            {
+               "name": "Max",
+               "surname": "Black",
+               "jobTitle": "Senior engineer",
+               "specialization": "civil engineering",
+               "address": {
+                  "region": "MINSK",
+                  "city": "Minsk",
+                  "street": "Lenina",
+                  "building": "33",
+                  "zipcode": "222050"
+               },
+               "dateOfBirth": "02.03.1974",
+			   "startJob": "15.09.2015"
+            },
+            {
+               "name": "Dima",
+               "surname": "Ivanov",
+               "jobTitle": "Junior engineer",
+               "specialization": "communications engineering",
+               "address": {
+                  "region": "MINSK",
+                  "city": "Minsk",
+                  "street": "Uralskaya",
+                  "building": "98",
+                  "zipcode": "220001"
+               },
+               "dateOfBirth": "02.03.1974",
+			   "startJob": "15.09.2015"
+            }
+         ],
+         "machineOperator": [
+            {
+               "name": "Mark",
+               "surname": "Donald",
+               "jobTitle": "Gunior mashinist",
+               "kindOfMachine": "pillar crane",
+			   "colourHardHat": "orange",
+               "address": {
+                  "region": "MINSK",
+                  "city": "Minsk",
+                  "street": "Zaharova",
+                  "building": "58",
+                  "zipcode": "222001"
+               },
+               "dateOfBirth": "02.03.1974",
+			   "startJob": "15.09.2015"
+            },
+            {
+               "name": "Alex",
+               "surname": "Milk",
+               "jobTitle": "Middle mashinist",
+               "kindOfMachine": "bulldozer",
+			   "colourHardHat": "orange",
+               "address": {
+                  "region": "MINSK",
+                  "city": "Minsk",
+                  "street": "Pushkina",
+                  "building": "48",
+                  "zipcode": "221025"
+               },
+               "dateOfBirth": "02.03.1974",
+			   "startJob": "15.09.2015"
+            }
+         ],
+         "builderWorkers": [
+            {
+               "name": "Oleg",
+               "surname": "Titov",
+               "jobTitle": "Bricklayer",
+               "kindOfConstructionWork": "Civil Works Unit",
+               "colourHardHat": "orange",
+               "address": {
+                  "region": "MINSK",
+                  "city": "Minsk",
+                  "street": "Zaharova",
+                  "building": "88",
+                  "zipcode": "222001"
+               },
+               "dateOfBirth": "02.03.1974",
+			   "startJob": "15.09.2015"
+            },
+            {
+               "name": "Alex",
+               "surname": "Milk",
+               "jobTitle": "foreman",
+               "kindOfConstructionWork": "Electrical Works",
+               "colourHardHat": "white",
+               "address": {
+                  "region": "MINSK",
+                  "city": "Minsk",
+                  "street": "Gintovta",
+                  "building": "5",
+                  "zipcode": "221013"
+               },
+               "dateOfBirth": "02.03.1974",
+			   "startJob": "15.09.2015"
+            }
+         ]
+   }
+}

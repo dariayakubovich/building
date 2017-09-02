@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   
+	 <buildingCompany>
+            <management>
+			    <name>Ivan</name>
+				<surname>Petrov</surname>
+				<jobTitle>CEO</jobTitle>
+				<address>
+				    <country>Belarus</country>
+					<region>MINSK</region>
+					<city>Minsk</city>
+					<street>Nemiga</street>
+					<building>10</building>
+					<zipcode>220230</zipcode>
+				</address>
+				<numberWorkAuto>Porshe 666</numberWorkAuto>
+				<dateOfBirth>02.03.1955</dateOfBirth>
+				<startJob> 15.09.2000 </startJob>
+            </management>
+			
+            <management>
+			    <name>Kolya</name>
+				<surname>Ivanov</surname>
+				<jobTitle>COO</jobTitle>
+				<address>
+				    <country>Belarus</country>
+					<region>MINSK</region>
+					<city>Minsk</city>
+					<street>Pionerskaya</street>
+					<building>10</building>
+					<zipcode>220030</zipcode>
+				</address>
+				<numberWorkAuto>Bently 5555</numberWorkAuto>
+				<dateOfBirth>12.03.1955</dateOfBirth>
+				<startJob>15.09.2000</startJob>
+            </management>
+		
+	
+            <economist>
+			    <name>Kate</name>
+				<surname>Kozlova</surname>
+				<jobTitle>Chief_Accountant</jobTitle>
+				<address>
+				    <country>Belarus</country>
+					<region>MINSK</region>
+					<city>Minsk</city>
+					<street>Pobeda</street>
+					<building>36</building>
+					<zipcode> 222030 </zipcode>
+				</address>
+				<dateOfBirth> 02.03.1974 </dateOfBirth>
+				<startJob> 15.09.2015 </startJob>
+            </economist>
+       
+            <economist>
+			    <name> Elena </name>
+				<surname> Petrova </surname>
+				<jobTitle> Accountant </jobTitle>
+				<address>
+				    <country> Belarus </country>
+					<region>MINSK</region>
+					<city>Minsk</city>
+					<street>Kozlova</street>
+					<building>15</building>
+					<zipcode>220062</zipcode>
+				</address>
+				<dateOfBirth>25.07.1985</dateOfBirth>
+				<startJob>15.09.2015</startJob>
+            </economist>
+        
+            <managerProject>
+			    <name>Alex</name>
+				<surname>Davidov</surname>
+				<jobTitle>Progect manager</jobTitle>
+				<address>
+				    <country>Belarus</country>
+					<region>MINSK</region>
+					<city>Minsk</city>
+					<street>Frunze</street>
+					<building>12</building>
+					<zipcode>220502</zipcode>
+				</address>
+				<dateOfBirth>19.10.1989</dateOfBirth>
+				<startJob>15.09.2015</startJob>
+            </managerProject>
+       
+            <managerProject>
+			    <name>Alex</name>
+				<surname>Pipkin</surname>
+				<jobTitle>Progect_manager</jobTitle>
+				<address>
+				    <country>Belarus</country>
+					<region>MINSK</region>
+					<city>Minsk</city>
+					<street>Nemiga</street>
+					<building>25</building>
+					<zipcode>220025</zipcode>
+				</address>
+				<dateOfBirth>25.12.1983</dateOfBirth>
+				<startJob>15.09.2015</startJob>
+            </managerProject>
+		
+            <engineer>
+			    <name>Max</name>
+				<surname>Black</surname>
+				<jobTitle>Senior_engineer</jobTitle>
+				<specialization> civil_engineering </specialization>
+				<address>
+				    <country>Belarus</country>
+					<region>MINSK</region>
+					<city>Minsk</city>
+					<street>Lenina</street>
+					<building>33</building>
+					<zipcode>222050</zipcode>
+				</address>
+				<dateOfBirth>30.10.1983</dateOfBirth>
+				<startJob>15.09.2015</startJob>
+            </engineer>
+			
+            <engineer>
+			    <name>Dima</name>
+				<surname>Ivanov</surname>
+				<jobTitle>Junior_engineer </jobTitle>
+				<specialization>communications_engineering</specialization>
+				<address>
+				    <country>Belarus</country>
+					<region>MINSK</region>
+					<city>Minsk</city>
+					<street>Uralskaya</street>
+					<building>98</building>
+					<zipcode>220001</zipcode>
+				</address>
+				<dateOfBirth>25.07.1986</dateOfBirth>
+				<startJob>15.09.2015</startJob>
+            </engineer>
+        
+            <machineOperator>
+			    <name>Mark</name>
+				<surname>Donald</surname>
+				<jobTitle>Gunior_mashinist</jobTitle>
+				<kindOfMachine>pillar_crane</kindOfMachine>
+				<colourHardHat>white</colourHardHat>
+				<address>
+				    <country>Belarus</country>
+					<region>MINSK</region>
+					<city>Minsk</city>
+					<street>Zaharova</street>
+					<building>58</building>
+					<zipcode>222001</zipcode>
+				</address>
+				<dateOfBirth>12.12.1992</dateOfBirth>
+				<startJob>15.09.2015</startJob>
+            </machineOperator>
+       
+            <machineOperator>
+			    <name>Alex</name>
+				<surname>Milk</surname>
+				<jobTitle>Middle_mashinist</jobTitle>
+				<kindOfMachine> bulldozer</kindOfMachine>
+				<colourHardHat> white </colourHardHat>
+				<address>
+				    <country>Belarus</country>
+					<region>MINSK</region>
+					<city>Minsk</city>
+					<street>Pushkina</street>
+					<building>48</building>
+					<zipcode>221025</zipcode>
+				</address>
+				<dateOfBirth>16.05.1987</dateOfBirth>
+				<startJob>15.09.2015</startJob>
+            </machineOperator>
+		
+            <builderWorkers>
+			    <name>Oleg</name>
+				<surname>Titov</surname>
+				<jobTitle>Bricklayer</jobTitle>
+				<kindOfConstructionWork>Civil_Works_Unit</kindOfConstructionWork>
+				<colourHardHat>orange</colourHardHat>
+				<address>
+				    <country>Belarus</country>
+					<region>MINSK</region>
+					<city>Minsk</city>
+					<street>Zaharova</street>
+					<building>88</building>
+					<zipcode>222001</zipcode>
+				</address>
+				<dateOfBirth>12.01.1979</dateOfBirth>
+				<startJob>15.09.2015</startJob>
+            </builderWorkers>
+			
+            <builderWorkers>
+			    <name>Alex</name>
+				<surname>Milk</surname>
+				<jobTitle>foreman</jobTitle>
+				<kindOfConstructionWork>Electrical_Works</kindOfConstructionWork>
+				<colourHardHat>white</colourHardHat>
+				<address>
+				    <country>Belarus</country>
+					<region>MINSK</region>
+					<city>Minsk</city>
+					<street>Gintovta</street>
+					<building>5</building>
+					<zipcode>221013</zipcode>
+				</address>
+				<dateOfBirth>31.05.1984</dateOfBirth>
+				<startJob>15.09.2015</startJob>
+            </builderWorkers>
+			</buildingCompany>
+  
