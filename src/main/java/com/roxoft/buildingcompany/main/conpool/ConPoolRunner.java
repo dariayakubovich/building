@@ -9,10 +9,18 @@ public class ConPoolRunner {
 	private static final Logger lOGGER = LogManager.getLogger(ConPoolRunner.class);
 
 	public static void main(String[] args) {
-		ConnectionPool.getConnectionPool();
+		ConnectionPool.getINSTANCE();
 		Runner.repeat(ConnectionPool.getCapacity(), () -> {
 			new Thread(() -> {
-				ConnectionPool.getConnectionPool().work();
+				try {
+					ConnectionPool.getINSTANCE().getConnection();
+					Connection connection = null;
+					ConnectionPool.getINSTANCE().putBackConnection(connection);
+					ConnectionPool.getINSTANCE().closeConnection();
+				} catch (InterruptedException e) {
+					lOGGER.error(e.getMessage());
+				}
+				
 			}).start();
 		});
 		try {
