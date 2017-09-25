@@ -1,16 +1,16 @@
-package main.java.com.roxoft.buildingcompany.main.jaxb;
+package com.roxoft.buildingcompany.main.jaxb;
 
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import main.java.com.roxoft.buildingcompany.models.administration.Economist;
-import main.java.com.roxoft.buildingcompany.models.administration.Management;
-import main.java.com.roxoft.buildingcompany.models.construction.BuilderWorkers;
-import main.java.com.roxoft.buildingcompany.models.construction.MachineOperator;
-import main.java.com.roxoft.buildingcompany.models.project.Engineer;
-import main.java.com.roxoft.buildingcompany.models.project.ManagerProject;
+import com.roxoft.buildingcompany.models.administration.Economist;
+import com.roxoft.buildingcompany.models.administration.Management;
+import com.roxoft.buildingcompany.models.construction.BuilderWorkers;
+import com.roxoft.buildingcompany.models.construction.MachineOperator;
+import com.roxoft.buildingcompany.models.project.Engineer;
+import com.roxoft.buildingcompany.models.project.ManagerProject;
 
 @XmlRootElement (name="buildingCompany")
 public class XMLBuildCom {

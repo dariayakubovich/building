@@ -1,8 +1,8 @@
-package main.java.com.roxoft.buildingcompany.main.conpool;
+package com.roxoft.buildingcompany.main.conpool;
 
-public class Connection {
+public class Connection1 {
 	private static int CountConnection;
-	public Connection() {
+	public Connection1() {
 		setCountConnection(getCountConnection() + 1);
 	}
 

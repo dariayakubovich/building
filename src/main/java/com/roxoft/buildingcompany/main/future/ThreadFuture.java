@@ -1,4 +1,4 @@
-package main.java.com.roxoft.buildingcompany.main.future;
+package com.roxoft.buildingcompany.main.future;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;

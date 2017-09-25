@@ -1,4 +1,4 @@
-package main.java.com.roxoft.buildingcompany.main.deadlock;
+package com.roxoft.buildingcompany.main.deadlock;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

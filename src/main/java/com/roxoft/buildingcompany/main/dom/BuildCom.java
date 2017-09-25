@@ -1,4 +1,4 @@
-package main.java.com.roxoft.buildingcompany.main.dom;
+package com.roxoft.buildingcompany.main.dom;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,14 +16,14 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
-import main.java.com.roxoft.buildingcompany.main.address.Address;
-import main.java.com.roxoft.buildingcompany.main.address.Region;
-import main.java.com.roxoft.buildingcompany.models.administration.Economist;
-import main.java.com.roxoft.buildingcompany.models.administration.Management;
-import main.java.com.roxoft.buildingcompany.models.construction.BuilderWorkers;
-import main.java.com.roxoft.buildingcompany.models.construction.MachineOperator;
-import main.java.com.roxoft.buildingcompany.models.project.Engineer;
-import main.java.com.roxoft.buildingcompany.models.project.ManagerProject;
+import com.roxoft.buildingcompany.main.address.Address;
+import com.roxoft.buildingcompany.main.address.Region;
+import com.roxoft.buildingcompany.models.administration.Economist;
+import com.roxoft.buildingcompany.models.administration.Management;
+import com.roxoft.buildingcompany.models.construction.BuilderWorkers;
+import com.roxoft.buildingcompany.models.construction.MachineOperator;
+import com.roxoft.buildingcompany.models.project.Engineer;
+import com.roxoft.buildingcompany.models.project.ManagerProject;
 
 public class BuildCom {
 	private List<BuilderWorkers> builderWorkers0;

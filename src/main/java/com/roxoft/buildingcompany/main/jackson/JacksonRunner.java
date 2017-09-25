@@ -1,4 +1,4 @@
-package main.java.com.roxoft.buildingcompany.main.jackson;
+package com.roxoft.buildingcompany.main.jackson;
 
 import java.io.File;
 import java.io.IOException;

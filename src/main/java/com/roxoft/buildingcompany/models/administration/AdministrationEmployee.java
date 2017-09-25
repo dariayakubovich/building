@@ -1,7 +1,7 @@
-package main.java.com.roxoft.buildingcompany.models.administration;
+package com.roxoft.buildingcompany.models.administration;
 
-import main.java.com.roxoft.buildingcompany.Employee;
-import main.java.com.roxoft.buildingcompany.main.IEat;
+import com.roxoft.buildingcompany.Employee;
+import com.roxoft.buildingcompany.main.IEat;
 
 /**
  * 

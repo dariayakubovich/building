@@ -1,13 +1,13 @@
-package main.java.com.roxoft.buildingcompany.main.jackson;
+package com.roxoft.buildingcompany.main.jackson;
 
 import java.util.List;
 
-import main.java.com.roxoft.buildingcompany.models.administration.Economist;
-import main.java.com.roxoft.buildingcompany.models.administration.Management;
-import main.java.com.roxoft.buildingcompany.models.construction.BuilderWorkers;
-import main.java.com.roxoft.buildingcompany.models.construction.MachineOperator;
-import main.java.com.roxoft.buildingcompany.models.project.Engineer;
-import main.java.com.roxoft.buildingcompany.models.project.ManagerProject;
+import com.roxoft.buildingcompany.models.administration.Economist;
+import com.roxoft.buildingcompany.models.administration.Management;
+import com.roxoft.buildingcompany.models.construction.BuilderWorkers;
+import com.roxoft.buildingcompany.models.construction.MachineOperator;
+import com.roxoft.buildingcompany.models.project.Engineer;
+import com.roxoft.buildingcompany.models.project.ManagerProject;
 
 public class JSONBuildCom {
 

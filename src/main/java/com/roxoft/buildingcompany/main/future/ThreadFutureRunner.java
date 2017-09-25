@@ -1,4 +1,4 @@
-package main.java.com.roxoft.buildingcompany.main.future;
+package com.roxoft.buildingcompany.main.future;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import main.java.com.roxoft.buildingcompany.main.Runner;
+import com.roxoft.buildingcompany.main.Runner;
 
 public class ThreadFutureRunner {
 	private static final Logger lOGGER = LogManager.getLogger(ThreadFutureRunner.class);

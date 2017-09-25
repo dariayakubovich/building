@@ -1,9 +1,9 @@
-package main.java.com.roxoft.buildingcompany.models.administration;
+package com.roxoft.buildingcompany.models.administration;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import main.java.com.roxoft.buildingcompany.main.address.Address;
+import com.roxoft.buildingcompany.main.address.Address;
 
 public class Management extends AdministrationEmployee {
 	private static final Logger lOGGER = LogManager.getLogger(Management.class);

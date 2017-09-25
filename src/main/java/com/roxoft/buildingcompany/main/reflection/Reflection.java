@@ -1,11 +1,11 @@
-package main.java.com.roxoft.buildingcompany.main.reflection;
+package com.roxoft.buildingcompany.main.reflection;
 
 import java.lang.reflect.*;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import main.java.com.roxoft.buildingcompany.models.administration.Management;
+import com.roxoft.buildingcompany.models.administration.Management;
 
 public class Reflection {
 	private static final Logger lOGGER = LogManager.getLogger(Management.class);

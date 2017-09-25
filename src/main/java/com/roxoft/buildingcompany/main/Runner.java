@@ -1,4 +1,4 @@
-package main.java.com.roxoft.buildingcompany.main;
+package com.roxoft.buildingcompany.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,16 +18,16 @@ import org.apache.commons.text.RandomStringGenerator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import main.java.com.roxoft.buildingcompany.Employee;
-import main.java.com.roxoft.buildingcompany.main.address.Address;
-import main.java.com.roxoft.buildingcompany.main.address.Region;
-import main.java.com.roxoft.buildingcompany.models.administration.AdministrationEmployee;
-import main.java.com.roxoft.buildingcompany.models.administration.Economist;
-import main.java.com.roxoft.buildingcompany.models.administration.Management;
-import main.java.com.roxoft.buildingcompany.models.construction.BuilderWorkers;
-import main.java.com.roxoft.buildingcompany.models.construction.MachineOperator;
-import main.java.com.roxoft.buildingcompany.models.project.Engineer;
-import main.java.com.roxoft.buildingcompany.models.project.ManagerProject;
+import com.roxoft.buildingcompany.Employee;
+import com.roxoft.buildingcompany.main.address.Address;
+import com.roxoft.buildingcompany.main.address.Region;
+import com.roxoft.buildingcompany.models.administration.AdministrationEmployee;
+import com.roxoft.buildingcompany.models.administration.Economist;
+import com.roxoft.buildingcompany.models.administration.Management;
+import com.roxoft.buildingcompany.models.construction.BuilderWorkers;
+import com.roxoft.buildingcompany.models.construction.MachineOperator;
+import com.roxoft.buildingcompany.models.project.Engineer;
+import com.roxoft.buildingcompany.models.project.ManagerProject;
 
 public class Runner {
 	private static final Logger lOGGER = LogManager.getLogger(Runner.class);

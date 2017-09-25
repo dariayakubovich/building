@@ -1,11 +1,11 @@
-package main.java.com.roxoft.buildingcompany;
+package com.roxoft.buildingcompany;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import main.java.com.roxoft.buildingcompany.main.jaxb.DateAdapter;
+import com.roxoft.buildingcompany.main.jaxb.DateAdapter;
 
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -13,7 +13,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import main.java.com.roxoft.buildingcompany.main.address.Address;
+import com.roxoft.buildingcompany.main.address.Address;
+import com.roxoft.buildingcompany.main.dao.AbstractDao;
 
 /**
  * Abstract class Employee is the root of the building company's hierarchy. It
@@ -23,7 +24,7 @@ import main.java.com.roxoft.buildingcompany.main.address.Address;
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-public abstract class Employee {
+public abstract class Employee extends AbstractDao {
 	private static final Logger lOGGER = LogManager.getLogger(Employee.class);
 	private String name;
 	private String surname;
@@ -80,6 +81,11 @@ public abstract class Employee {
 	}
 
 	public Address getAddress() {
+		return address;
+	}
+	
+	public int getAddressById(Address address) {
+		if ()
 		return address;
 	}
 

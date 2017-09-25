@@ -1,4 +1,4 @@
-package main.java.com.roxoft.buildingcompany.main.jaxb;
+package com.roxoft.buildingcompany.main.jaxb;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

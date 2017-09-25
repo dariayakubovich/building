@@ -1,4 +1,4 @@
-package main.java.com.roxoft.buildingcompany.main.address;
+package com.roxoft.buildingcompany.main.address;
 
 public class Address {
 

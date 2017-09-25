@@ -1,7 +1,7 @@
-package main.java.com.roxoft.buildingcompany.models.construction;
+package com.roxoft.buildingcompany.models.construction;
 
-import main.java.com.roxoft.buildingcompany.Employee;
-import main.java.com.roxoft.buildingcompany.main.IEat;
+import com.roxoft.buildingcompany.Employee;
+import com.roxoft.buildingcompany.main.IEat;
 
 public abstract class ConstructionEmployee extends Employee implements IEat {
 	private String colourHardHat;

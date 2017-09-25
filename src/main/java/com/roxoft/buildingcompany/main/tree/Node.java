@@ -1,4 +1,4 @@
-package main.java.com.roxoft.buildingcompany.main.tree;
+package com.roxoft.buildingcompany.main.tree;
 
 public class Node {
     public double value;

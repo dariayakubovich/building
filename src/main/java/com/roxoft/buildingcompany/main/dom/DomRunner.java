@@ -1,4 +1,4 @@
-package main.java.com.roxoft.buildingcompany.main.dom;
+package com.roxoft.buildingcompany.main.dom;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

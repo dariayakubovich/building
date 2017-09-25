@@ -1,4 +1,4 @@
-package main.java.com.roxoft.buildingcompany.main;
+package com.roxoft.buildingcompany.main;
 
 public class AbsolutFilePathException extends Exception {
 
