@@ -6,13 +6,12 @@ import java.text.SimpleDateFormat;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
-import com.fasterxml.jackson.core.JsonGenerationException;
-
-public class JacksonRunner {
-	private static final Logger lOGGER = LogManager.getLogger(JacksonRunner.class);
+public class JackRunner {
+	private static final Logger lOGGER = LogManager.getLogger(JackRunner.class);
 
 	public static void main(String[] args) {
 

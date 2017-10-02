@@ -1,6 +1,8 @@
-package com.roxoft.buildingcompany.main.dao;
+package com.roxoft.buildingcompany.main.dao.idao;
 
 import java.util.List;
+
+import com.roxoft.buildingcompany.main.dao.jdbc.AbstractDao;
 
 public interface IDao<T extends AbstractDao> {
 
@@ -13,4 +15,4 @@ public interface IDao<T extends AbstractDao> {
 	void delete(T entity);
 
 	List<T> findAll();
-}
+	}

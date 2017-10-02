@@ -3,8 +3,8 @@ package com.roxoft.buildingcompany.main.tree;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class TreeRunner {
-	private static final Logger lOGGER = LogManager.getLogger(TreeRunner.class);
+public class TRunner {
+	private static final Logger lOGGER = LogManager.getLogger(TRunner.class);
 
 	public static void main(String[] args) {
 		Tree tree = new Tree();

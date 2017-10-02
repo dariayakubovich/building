@@ -1,4 +1,4 @@
-package com.roxoft.buildingcompany.main.conpool;
+package com.roxoft.buildingcompany.main.dao;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -64,10 +64,9 @@ public class ConnectionPool {
 	private Connection initiateConnection() {
 		try {
 			connection = DriverManager.getConnection(url, user, password);
-			lOGGER.info("Connection was created");
 		} catch (SQLException e) {
 			lOGGER.error(e.getMessage());
-		} 
+		}
 		return connection;
 	}
 

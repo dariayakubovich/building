@@ -7,8 +7,8 @@ import org.apache.logging.log4j.Logger;
 
 import com.roxoft.buildingcompany.models.administration.Management;
 
-public class Reflection {
-	private static final Logger lOGGER = LogManager.getLogger(Management.class);
+public class Reflect {
+	private static final Logger lOGGER = LogManager.getLogger(Reflect.class);
 
 	public static void main(String[] args) {
 

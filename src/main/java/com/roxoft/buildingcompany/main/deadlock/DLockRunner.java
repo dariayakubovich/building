@@ -3,8 +3,8 @@ package com.roxoft.buildingcompany.main.deadlock;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class  DeadLockRunner{
-	private static final Logger lOGGER = LogManager.getLogger(DeadLockRunner.class);
+public class  DLockRunner{
+	private static final Logger lOGGER = LogManager.getLogger(DLockRunner.class);
 
 	public static void main(String[] args) {
 		Object lock1 = new Object();

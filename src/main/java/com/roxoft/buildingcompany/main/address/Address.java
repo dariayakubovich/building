@@ -1,11 +1,17 @@
 package com.roxoft.buildingcompany.main.address;
 
-public class Address {
+import com.roxoft.buildingcompany.main.dao.jdbc.AbstractDao;
 
-	public Address() {}
+public class Address extends AbstractDao {
+
+	public Address() {
+	}
 
 	private static final String COUNTRY = "Republic of Belarus";
-	
+
+	private int id;
+	private String country1;
+	private int region_id;
 	private Region region;
 	private String city;
 	private String street;
@@ -53,6 +59,34 @@ public class Address {
 		this.region = region;
 	}
 
+	public int getRegion_id() {
+		return region_id;
+	}
+
+	public void setRegion_id(int region_id) {
+		this.region_id = region_id;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public static String getCountry() {
+		return COUNTRY;
+	}
+
+	public String getCountry1() {
+		return country1;
+	}
+
+	public void setCountry1(String country1) {
+		this.country1 = country1;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -84,8 +118,9 @@ public class Address {
 		return true;
 	}
 
-	public static String getCountry() {
-		return COUNTRY;
+	@Override
+	public String toString() {
+		return "Address [id=" + id + ", country=" + country1 + ", region=" + region.getRegionName() + ", city=" + city
+				+ ", street=" + street + ", building=" + building + ", zipcode=" + zipcode + "]";
 	}
-
 }

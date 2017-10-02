@@ -1,20 +1,21 @@
 package com.roxoft.buildingcompany;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
-import com.roxoft.buildingcompany.main.jaxb.DateAdapter;
-
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.roxoft.buildingcompany.main.address.Address;
-import com.roxoft.buildingcompany.main.dao.AbstractDao;
+import com.roxoft.buildingcompany.main.dao.jdbc.AbstractDao;
+import com.roxoft.buildingcompany.main.jaxb.DateAdapter;
+import com.roxoft.buildingcompany.main.salary.Salary;
 
 /**
  * Abstract class Employee is the root of the building company's hierarchy. It
@@ -27,8 +28,13 @@ import com.roxoft.buildingcompany.main.dao.AbstractDao;
 public abstract class Employee extends AbstractDao {
 	private static final Logger lOGGER = LogManager.getLogger(Employee.class);
 	private String name;
+	private Salary salary;
+	private List<Salary> salaryL;
 	private String surname;
 	private String jobTitle;
+	private int address_id;
+	private int id1;
+
 	private Address address;
 	@XmlJavaTypeAdapter(DateAdapter.class)
 	private Date dateOfBirth;
@@ -83,11 +89,6 @@ public abstract class Employee extends AbstractDao {
 	public Address getAddress() {
 		return address;
 	}
-	
-	public int getAddressById(Address address) {
-		if ()
-		return address;
-	}
 
 	public void setAddress(Address address) {
 		this.address = address;
@@ -99,6 +100,29 @@ public abstract class Employee extends AbstractDao {
 
 	public void setStartJob(Date startJob) {
 		this.startJob = startJob;
+	}
+	public int getId1() {
+		return id1;
+	}
+
+	public void setId1(int id1) {
+		this.id1 = id1;
+	}
+
+	public Salary getSalary() {
+		return salary;
+	}
+
+	public void setSalary(Salary salary) {
+		this.salary = salary;
+	}
+
+	public List<Salary> getSalaryL() {
+		return salaryL;
+	}
+
+	public void setSalaryL(List<Salary> salaryL) {
+		this.salaryL = salaryL;
 	}
 
 	/**
@@ -133,14 +157,19 @@ public abstract class Employee extends AbstractDao {
 		this.dateOfBirth = date;
 	}
 
-	private Date formatFromStringToDate(String string, SimpleDateFormat formatter) {
-		Date date = null;
-		try {
-			date = formatter.parse(string);
-		} catch (ParseException e) {
-			lOGGER.info(e.getMessage());
-		}
-		return date;
+	public java.util.Date setDateOfBirth0(String dateOfBirthStr) {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+		Date date = formatFromStringToDate(dateOfBirthStr, formatter);
+		this.dateOfBirth = date;
+		return dateOfBirth;
+	}
+
+	public int getAddress_id() {
+		return address_id;
+	}
+
+	public void setAddress_id(int address_id) {
+		this.address_id = address_id;
 	}
 
 	public String changeDateOfBirth(String dateOfBirthString) {
@@ -193,5 +222,7 @@ public abstract class Employee extends AbstractDao {
 			return false;
 		return true;
 	}
+
+	
 
 }

@@ -3,16 +3,14 @@ package com.roxoft.buildingcompany.main.mysql;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.Reader;
 import java.sql.*;
 import java.util.Properties;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class JDBCRunner {
-	private static final Logger lOGGER = LogManager.getLogger(JDBCRunner.class);
+public class JdbcConnection {
+	private static final Logger lOGGER = LogManager.getLogger(JdbcConnection.class);
 
 	protected static void close(AutoCloseable resourse) {
 		if (resourse != null)

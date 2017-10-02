@@ -10,8 +10,8 @@ import javax.xml.bind.Unmarshaller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class JaxbRunner {
-	private static final Logger lOGGER = LogManager.getLogger(JaxbRunner.class);
+public class JRunner {
+	private static final Logger lOGGER = LogManager.getLogger(JRunner.class);
 
 	public static void main(String[] args) {
 		try {

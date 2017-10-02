@@ -29,8 +29,8 @@ import com.roxoft.buildingcompany.models.construction.MachineOperator;
 import com.roxoft.buildingcompany.models.project.Engineer;
 import com.roxoft.buildingcompany.models.project.ManagerProject;
 
-public class Runner {
-	private static final Logger lOGGER = LogManager.getLogger(Runner.class);
+public class Runner1 {
+	private static final Logger lOGGER = LogManager.getLogger(Runner1.class);
 
 	public static void workingEmployee(Employee employee) {
 		employee.work();
@@ -329,3 +329,4 @@ public class Runner {
 	}
 
 }
+

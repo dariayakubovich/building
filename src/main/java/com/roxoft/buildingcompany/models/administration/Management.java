@@ -1,13 +1,29 @@
 package com.roxoft.buildingcompany.models.administration;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.roxoft.buildingcompany.main.address.Address;
+import com.roxoft.buildingcompany.main.salary.Salary;
 
 public class Management extends AdministrationEmployee {
 	private static final Logger lOGGER = LogManager.getLogger(Management.class);
+	private int administration_id;
+	private int id3;
+	
+
 	private String numberWorkAuto;
+
+	public int getAdministration_id() {
+		return administration_id;
+	}
+
+	public void setAdministration_id(int administration_id) {
+		this.administration_id = administration_id;
+	}
 
 	@Override
 	public void work() {
@@ -33,10 +49,20 @@ public class Management extends AdministrationEmployee {
 				+ getAddress().getStreet() + " street, build " + getAddress().getBuilding() + ", "
 				+ getAddress().getRegion().getRegionName() + ", " + getAddress().getCity() + ", " + Address.getCountry()
 				+ ", " + getAddress().getZipcode() + "\n" + ", Work Auto - " + numberWorkAuto + ", Date of birth: "
-				+ getDateOfBirth() + ", Date of starting work: " + getStartJob();
+				+ getDateOfBirth() /* +  "\n" + toString1()*/;
 
 	}
-
+	public List<String> toString1() {
+		List<String> salaryString = new ArrayList<>();
+		String string = null;
+		for (int i = 0; i < 3; i++) {
+		string =  "Salary= " + getSalaryL().get(i).getSalary() + " Month " + getSalaryL().get(i).getMonth() + " Year " +  getSalaryL().get(0).getYear() + "\n" ;
+		salaryString.add(string);
+		}
+		return salaryString;
+	
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -74,6 +100,14 @@ public class Management extends AdministrationEmployee {
 	@Override
 	public void eat() {
 		lOGGER.info("Have meal at the restaurant");
+	}
+
+	public int getId3() {
+		return id3;
+	}
+
+	public void setId3(int id3) {
+		this.id3 = id3;
 	}
 
 }
