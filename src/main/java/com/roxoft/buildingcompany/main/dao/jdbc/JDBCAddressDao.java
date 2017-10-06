@@ -143,32 +143,6 @@ public class JDBCAddressDao extends AbstractDao implements IAddressDao {
 		return addressList;
 	}
 
-	private Region getRegionById(int reg) {
-		Region region = null;
-		switch (reg) {
-		case 1:
-			region = Region.MINSK;
-			break;
-		case 2:
-			region = Region.VITEBSK;
-			break;
-		case 3:
-			region = Region.GOMEL;
-			break;
-		case 4:
-			region = Region.GRODNO;
-			break;
-		case 5:
-			region = Region.MOGILEV;
-			break;
-		case 6:
-			region = Region.BREST;
-			break;
-		default:
-			lOGGER.error("Wrong region id!");
-			break;
-		}
-		return region;
-	}
+	
 
 }

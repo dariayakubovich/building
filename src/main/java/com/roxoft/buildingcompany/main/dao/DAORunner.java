@@ -20,8 +20,8 @@ public class DAORunner {
 		/*_________________________SALARY all methods work__________________________________*/
 		
 		
-		JDBCSalaryDao salaryDao = new JDBCSalaryDao();
-		/*
+/*		JDBCSalaryDao salaryDao = new JDBCSalaryDao();
+		
 	    Salary salary = new Salary();
 		salary.setEmployee_id(1);
 		salary.setMonth("JANUARY");
@@ -42,16 +42,16 @@ public class DAORunner {
 		salaryDao.delete(salary2);
 		
 		lOGGER.info(salaryDao.getById(20));
-		*/
+		
 		 List<Salary> salaryList = salaryDao.findAll();
-		//salaryList.forEach(lOGGER::info);
+		salaryList.forEach(lOGGER::info);
 		
 		
 		/*______________________________ADDRESS all methods work____________________________*/
 		
 		
-		JDBCAddressDao addressDao = new JDBCAddressDao();
-		/*
+	/*	JDBCAddressDao addressDao = new JDBCAddressDao();
+		
 		Address address = new Address();
 		address.setCountry1("BELARUS");
 		address.setRegion_id(1);
@@ -76,9 +76,9 @@ public class DAORunner {
 		addressDao.delete(address2);
 		
 		lOGGER.info(addressDao.getById(1));
-		*/
+		
 		List<Address> addressList = addressDao.findAll();
-		//addressList.forEach(lOGGER::info);
+		addressList.forEach(lOGGER::info);*/
 		
 		
 		/*______________________________MANAGEMENT____________________________*/
@@ -94,7 +94,7 @@ public class DAORunner {
 		management.setNumberWorkAuto("LADA");
 		management.setAdministration_id(1);
 		managementDao.add(management);
-		
+	
 		Management management1 = new Management();
 		management1.setName("BOB");
 		management1.setSurname("DILAN");
@@ -111,14 +111,11 @@ public class DAORunner {
 		
 		Management management2 = new Management();
 		management2.setId1(32);
-		managementDao.delete(management2);
-		*/
+		managementDao.delete(management2);*/
+		
 		
 		List<Management> managementList = managementDao.findAll();
 		managementList.forEach(lOGGER::info);
 		//lOGGER.info(managementDao.getById(1));
-		
-		
 	}
-
 }

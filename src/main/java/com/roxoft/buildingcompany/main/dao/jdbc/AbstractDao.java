@@ -1,5 +1,7 @@
 package com.roxoft.buildingcompany.main.dao.jdbc;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -7,15 +9,30 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.roxoft.buildingcompany.main.address.Address;
+import com.roxoft.buildingcompany.main.address.Region;
 import com.roxoft.buildingcompany.main.dao.ConnectionPool;
 import com.roxoft.buildingcompany.main.salary.Salary;
 
 public abstract class AbstractDao {
 	private static final Logger lOGGER = LogManager.getLogger(AbstractDao.class);
+	public static SqlSessionFactory getSqlSessionFactory() {
+		String resource = "src\\main\\resources\\mybatis.xml";
+		InputStream inputStream = null;
+		try {
+			inputStream = Resources.getResourceAsStream(resource);
+		} catch (IOException e) {
+			lOGGER.error(e.getMessage());
+		}
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		return sqlSessionFactory;
+	}
 
 	protected void close(AutoCloseable resourse) {
 		if (resourse != null)
@@ -98,10 +115,37 @@ public abstract class AbstractDao {
 		JDBCSalaryDao salaryDao = new JDBCSalaryDao();
 		List<Salary> salaryList = salaryDao.findAll();
 		List<Salary> salaryL = new ArrayList<>();
-		for (int i = (3 * (emplId - 1)); i < emplId + 3; i++) {
+		for (int i = (3 * (emplId - 1)); i < ((3 * (emplId - 1)) + 3); i++) {
 			salaryL.add(salaryList.get(i));
 		}
 		return salaryL;
+	}
+	protected Region getRegionById(int reg) {
+		Region region = null;
+		switch (reg) {
+		case 1:
+			region = Region.MINSK;
+			break;
+		case 2:
+			region = Region.VITEBSK;
+			break;
+		case 3:
+			region = Region.GOMEL;
+			break;
+		case 4:
+			region = Region.GRODNO;
+			break;
+		case 5:
+			region = Region.MOGILEV;
+			break;
+		case 6:
+			region = Region.BREST;
+			break;
+		default:
+			lOGGER.error("Wrong region id!");
+			break;
+		}
+		return region;
 	}
 
 }

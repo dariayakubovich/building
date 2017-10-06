@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+ 
+<configuration>
+
+	<properties resource="env.properties" />
+	<environments default="stag">
+		<environment id="stag">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${STAG.jdbc.driver}" />
+				<property name="url" value="${STAG.jdbc.url}" />
+				<property name="username" value="${STAG.jdbc.username}" />
+				<property name="password" value="${STAG.jdbc.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="mappings/AddressMapper.xml" />
+		
+	</mappers>
+
+</configuration>

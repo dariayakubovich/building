@@ -45,18 +45,19 @@ public class Management extends AdministrationEmployee {
 
 	@Override
 	public String toString() {
-		return "Full Name: " + getName() + " " + getSurname() + ". Job title: " + getJobTitle() + ". Address: "
+		return "Full Name: " + getName() + " " + getSurname() + ". Job title: " + getJobTitle() +  "\n" + ". Address: "
 				+ getAddress().getStreet() + " street, build " + getAddress().getBuilding() + ", "
-				+ getAddress().getRegion().getRegionName() + ", " + getAddress().getCity() + ", " + Address.getCountry()
+				+ getAddress().getRegion().getRegionName() + ", " + getAddress().getCity() + ", " + getAddress().getCountry1()
 				+ ", " + getAddress().getZipcode() + "\n" + ", Work Auto - " + numberWorkAuto + ", Date of birth: "
-				+ getDateOfBirth() /* +  "\n" + toString1()*/;
+				+ getDateOfBirth() + "\n" + toStringSalary();
 
 	}
-	public List<String> toString1() {
+	
+	public List<String> toStringSalary() {
 		List<String> salaryString = new ArrayList<>();
 		String string = null;
-		for (int i = 0; i < 3; i++) {
-		string =  "Salary= " + getSalaryL().get(i).getSalary() + " Month " + getSalaryL().get(i).getMonth() + " Year " +  getSalaryL().get(0).getYear() + "\n" ;
+		for (int i = 0; i < getSalaryL().size(); i++) {
+		string =  "Salary= " + getSalaryL().get(i).getSalary() + " Month " + getSalaryL().get(i).getMonth() + " Year " +  getSalaryL().get(i).getYear() + "\n" ;
 		salaryString.add(string);
 		}
 		return salaryString;
