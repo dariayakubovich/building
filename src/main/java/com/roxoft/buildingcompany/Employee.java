@@ -13,7 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.roxoft.buildingcompany.main.address.Address;
-import com.roxoft.buildingcompany.main.dao.jdbc.AbstractDao;
+import com.roxoft.buildingcompany.main.dao.AbstractDao;
 import com.roxoft.buildingcompany.main.jaxb.DateAdapter;
 import com.roxoft.buildingcompany.main.salary.Salary;
 
@@ -101,6 +101,7 @@ public abstract class Employee extends AbstractDao {
 	public void setStartJob(Date startJob) {
 		this.startJob = startJob;
 	}
+
 	public int getId1() {
 		return id1;
 	}
@@ -151,17 +152,14 @@ public abstract class Employee extends AbstractDao {
 	 * @param {@code String} dateOfBirthStr
 	 */
 
-	public void setDateOfBirth(String dateOfBirthStr) {
+	public void setDateOfBirth1(String dateOfBirthStr) {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
 		Date date = formatFromStringToDate(dateOfBirthStr, formatter);
 		this.dateOfBirth = date;
 	}
 
-	public java.util.Date setDateOfBirth0(String dateOfBirthStr) {
-		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
-		Date date = formatFromStringToDate(dateOfBirthStr, formatter);
-		this.dateOfBirth = date;
-		return dateOfBirth;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	public int getAddress_id() {
@@ -222,7 +220,5 @@ public abstract class Employee extends AbstractDao {
 			return false;
 		return true;
 	}
-
-	
 
 }

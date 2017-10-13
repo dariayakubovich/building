@@ -1,6 +1,6 @@
 package com.roxoft.buildingcompany.main.salary;
 
-import com.roxoft.buildingcompany.main.dao.jdbc.AbstractDao;
+import com.roxoft.buildingcompany.main.dao.AbstractDao;
 
 public class Salary extends AbstractDao {
 	private int id;

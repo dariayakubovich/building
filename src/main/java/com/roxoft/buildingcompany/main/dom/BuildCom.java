@@ -199,7 +199,7 @@ public class BuildCom {
 		builderWorker.setKindOfConstructionWork(
 				getElementTextContent(builderWorkersElement, "kindOfConstructionWork").trim());
 		builderWorker.setColourHardHat(getElementTextContent(builderWorkersElement, "colourHardHat").trim());
-		builderWorker.setDateOfBirth(getElementTextContent(builderWorkersElement, "dateOfBirth").trim());
+		builderWorker.setDateOfBirth1(getElementTextContent(builderWorkersElement, "dateOfBirth").trim());
 		Address address = new Address();
 		Element addressElement = (Element) builderWorkersElement.getElementsByTagName("address").item(0);
 		buildAddress(address, addressElement);
@@ -214,7 +214,7 @@ public class BuildCom {
 		machineOperator.setJobTitle(getElementTextContent(machineOperatorElement, "jobTitle").trim());
 		machineOperator.setKindOfMachine(getElementTextContent(machineOperatorElement, "kindOfMachine").trim());
 		machineOperator.setColourHardHat(getElementTextContent(machineOperatorElement, "colourHardHat").trim());
-		machineOperator.setDateOfBirth(getElementTextContent(machineOperatorElement, "dateOfBirth").trim());
+		machineOperator.setDateOfBirth1(getElementTextContent(machineOperatorElement, "dateOfBirth").trim());
 		Address address = new Address();
 		Element addressElement = (Element) machineOperatorElement.getElementsByTagName("address").item(0);
 		buildAddress(address, addressElement);
@@ -228,7 +228,7 @@ public class BuildCom {
 		engineer.setSurname(getElementTextContent(engineerElement, "surname").trim());
 		engineer.setJobTitle(getElementTextContent(engineerElement, "jobTitle").trim());
 		engineer.setSpecialization(getElementTextContent(engineerElement, "specialization").trim());
-		engineer.setDateOfBirth(getElementTextContent(engineerElement, "dateOfBirth").trim());
+		engineer.setDateOfBirth1(getElementTextContent(engineerElement, "dateOfBirth").trim());
 		Address address = new Address();
 		Element addressElement = (Element) engineerElement.getElementsByTagName("address").item(0);
 		buildAddress(address, addressElement);
@@ -241,7 +241,7 @@ public class BuildCom {
 		managerProject.setName(getElementTextContent(managerProjectElement, "name").trim());
 		managerProject.setSurname(getElementTextContent(managerProjectElement, "surname").trim());
 		managerProject.setJobTitle(getElementTextContent(managerProjectElement, "jobTitle").trim());
-		managerProject.setDateOfBirth(getElementTextContent(managerProjectElement, "dateOfBirth").trim());
+		managerProject.setDateOfBirth1(getElementTextContent(managerProjectElement, "dateOfBirth").trim());
 		Address address = new Address();
 		Element addressElement = (Element) managerProjectElement.getElementsByTagName("address").item(0);
 		buildAddress(address, addressElement);
@@ -254,7 +254,7 @@ public class BuildCom {
 		economist.setName(getElementTextContent(economistElement, "name").trim());
 		economist.setSurname(getElementTextContent(economistElement, "surname").trim());
 		economist.setJobTitle(getElementTextContent(economistElement, "jobTitle").trim());
-		economist.setDateOfBirth(getElementTextContent(economistElement, "dateOfBirth").trim());
+		economist.setDateOfBirth1(getElementTextContent(economistElement, "dateOfBirth").trim());
 		Address address = new Address();
 		Element addressElement = (Element) economistElement.getElementsByTagName("address").item(0);
 		buildAddress(address, addressElement);
@@ -267,7 +267,7 @@ public class BuildCom {
 		management.setName(getElementTextContent(managementElement, "name").trim());
 		management.setSurname(getElementTextContent(managementElement, "surname").trim());
 		management.setJobTitle(getElementTextContent(managementElement, "jobTitle").trim());
-		management.setDateOfBirth(getElementTextContent(managementElement, "dateOfBirth").trim());
+		management.setDateOfBirth1(getElementTextContent(managementElement, "dateOfBirth").trim());
 		management.setNumberWorkAuto(getElementTextContent(managementElement, "numberWorkAuto").trim());
 		Address address = new Address();
 		Element addressElement = (Element) managementElement.getElementsByTagName("address").item(0);

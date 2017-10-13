@@ -1,6 +1,6 @@
 package com.roxoft.buildingcompany.main.address;
 
-import com.roxoft.buildingcompany.main.dao.jdbc.AbstractDao;
+import com.roxoft.buildingcompany.main.dao.AbstractDao;
 
 public class Address extends AbstractDao {
 
@@ -13,6 +13,7 @@ public class Address extends AbstractDao {
 	private String country1;
 	private int region_id;
 	private Region region;
+	private String reg;
 	private String city;
 	private String street;
 	private String building;
@@ -87,6 +88,14 @@ public class Address extends AbstractDao {
 		this.country1 = country1;
 	}
 
+	public String getReg() {
+		return reg;
+	}
+
+	public void setReg(String reg) {
+		this.reg = reg;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -120,7 +129,9 @@ public class Address extends AbstractDao {
 
 	@Override
 	public String toString() {
-		return "Address [id=" + id + ", country=" + country1 + ", region=" + region.getRegionName() + ", city=" + city
+		return "Address [id=" + id + ", country=" + country1 + ", region=" + /*region.getRegionName() +*/ reg + ", city=" + city
 				+ ", street=" + street + ", building=" + building + ", zipcode=" + zipcode + "]";
 	}
+
+	
 }

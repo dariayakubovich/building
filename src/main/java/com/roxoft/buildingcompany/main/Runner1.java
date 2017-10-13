@@ -65,7 +65,7 @@ public class Runner1 {
 		address.setZipcode("220002");
 		management.setAddress(address);
 		((Management) management).setNumberWorkAuto("Porshe 666");
-		management.setDateOfBirth("02.03.2000");
+		management.setDateOfBirth1("02.03.2000");
 		Date date = formatFromStringToDate("15.09.2015", new SimpleDateFormat("dd.MM.yyyy"));
 		management.setStartJob(date);
 
@@ -82,7 +82,7 @@ public class Runner1 {
 		address1.setBuilding("48");
 		address1.setZipcode("220202");
 		economist.setAddress(address1);
-		economist.setDateOfBirth("15.03.1989");
+		economist.setDateOfBirth1("15.03.1989");
 		Date date1 = formatFromStringToDate("15.09.2015", new SimpleDateFormat("dd.MM.yyyy"));
 		economist.setStartJob(date1);
 
@@ -98,7 +98,7 @@ public class Runner1 {
 		address2.setBuilding("12");
 		address2.setZipcode("220502");
 		managerProject.setAddress(address2);
-		managerProject.setDateOfBirth("19.10.1989");
+		managerProject.setDateOfBirth1("19.10.1989");
 		Date date2 = formatFromStringToDate("15.09.2015", new SimpleDateFormat("dd.MM.yyyy"));
 		managerProject.setStartJob(date2);
 
@@ -115,7 +115,7 @@ public class Runner1 {
 		address3.setBuilding("46");
 		address3.setZipcode("220502");
 		engineer.setAddress(address3);
-		engineer.setDateOfBirth("29.12.1989");
+		engineer.setDateOfBirth1("29.12.1989");
 		Date date3 = formatFromStringToDate("15.09.2015", new SimpleDateFormat("dd.MM.yyyy"));
 		engineer.setStartJob(date3);
 
@@ -132,7 +132,7 @@ public class Runner1 {
 		address4.setZipcode("220232");
 		machineOperator.setAddress(address4);
 		((MachineOperator) machineOperator).setColourHardHat("Orange");
-		engineer.setDateOfBirth("08.11.1989");
+		engineer.setDateOfBirth1("08.11.1989");
 		Date date4 = formatFromStringToDate("15.09.2015", new SimpleDateFormat("dd.MM.yyyy"));
 		machineOperator.setStartJob(date4);
 
@@ -149,7 +149,7 @@ public class Runner1 {
 		builderWorkers.setAddress(address5);
 		((BuilderWorkers) builderWorkers).setColourHardHat("Orange");
 		((BuilderWorkers) builderWorkers).setKindOfConstructionWork("Civil Works Unit");
-		builderWorkers.setDateOfBirth("04.12.1989");
+		builderWorkers.setDateOfBirth1("04.12.1989");
 		Date date5 = formatFromStringToDate("15.09.2015", new SimpleDateFormat("dd.MM.yyyy"));
 		builderWorkers.setStartJob(date5);
 
@@ -170,7 +170,7 @@ public class Runner1 {
 		address0.setZipcode("220002");
 		management1.setAddress(address0);
 		((Management) management1).setNumberWorkAuto("Porshe 666");
-		management1.setDateOfBirth("02.03.2000");
+		management1.setDateOfBirth1("02.03.2000");
 
 		lOGGER.info("Examples of methods toString(), hashCode() and equals() :");
 		lOGGER.info(management.toString());

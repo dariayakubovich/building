@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.roxoft.buildingcompany.main.dao.mybatis.MyBatisManagementDao">
+
+	<insert id="add" useGeneratedKeys="true" keyProperty="id">
+		<![CDATA[
+			INSERT INTO employees (NAME,SURNAME,JOB_TITLE,DATE_OF_BIRTH,ADDRESS_ID)
+			VALUES (
+				#{name},
+				#{surname},
+				#{jobTitle},
+				#{dateOfBirth},
+				#{address_id}
+			)
+		]]>
+		<![CDATA[
+			INSERT INTO administration_employees (EMPLOYEES_ID)
+			VALUE (
+				#{employee_id}
+			)
+		]]>
+		<![CDATA[
+			INSERT INTO management (WORK_AUTO, ADMINISTRATION_EMPLOYEES_ID)
+			VALUES (
+				#{numberWorkAuto},
+				#{administration_id}
+			)
+		]]>
+	</insert>
+
+	<sql id="getManagement">
+		<![CDATA[
+			SELECT
+			    E.ID AS EMPLOYEES_ID,
+			    E.NAME AS EMPLOYEES_NAME,
+				E.SURNAME AS EMPLOYEES_SURNAME,
+				E.JOB_TITLE AS EMPLOYEES_JOB_TITLE,
+				E.DATE_OF_BIRTH AS EMPLOYEES_DATE_OF_BIRTH,
+				E.ADDRESS_ID AS EMPLOYEES_ADDRESS_ID,
+				M.WORK_AUTO AS MANAGEMENT_WORK_AUTO
+			FROM
+				MANAGEMENT M
+				    LEFT JOIN administration_employees AE ON
+				        AE.ID = M.ADMINISTRATION_EMPLOYEES_ID
+				    LEFT JOIN employees E ON 
+					    E.ID = AE.EMPLOYEES_ID
+		]]>
+	</sql>
+
+	<select id="getById" resultMap="Management">
+		<include refid="getManagement" />
+		<![CDATA[
+			WHERE E.ID = #{id};
+		]]>
+	</select>
+	
+	<select id="findAll" resultMap="Management">
+		<include refid="getManagement" />
+	</select>
+
+	<update id="update">
+		<![CDATA[
+        	UPDATE
+        		EMPLOYEES
+          	SET
+          		NAME = #{name},
+				SURNAME = #{surname},
+				JOB_TITLE = #{jobTitle},
+				DATE_OF_BIRTH = #{dateOfBirth},
+				ADDRESS_ID = #{address_id}
+          	WHERE
+			 	ID = #{id1}
+        ]]>
+		
+		<![CDATA[
+        	UPDATE
+        		ADMINISTRATION_EMPLOYEES
+          	SET
+          		EMPLOYEES_ID = #{employee_id}
+          	WHERE
+			 	ID = #{id2}
+        ]]>
+		
+		<![CDATA[
+        	UPDATE
+        		MANAGEMENT
+          	SET
+          		WORK_AUTO = #{numberWorkAuto},
+				ADMINISTRATION_EMPLOYEES_ID = #{administration_id}
+          	WHERE
+			 	ID = #{id3}
+        ]]>
+	</update>
+	
+	 <delete id="delete">
+        <![CDATA[
+        	DELETE
+          	FROM 
+          		EMPLOYEES
+          	WHERE
+          		ID = #{id1}
+        ]]>
+		<![CDATA[
+        	DELETE
+          	FROM 
+          		ADMINISTRATION_EMPLOYEES
+          	WHERE
+          		EMPLOYEES_ID = #{id2}
+        ]]>
+		<![CDATA[
+        	DELETE
+          	FROM 
+          		MANAGEMENT
+          	WHERE
+          		ADMINISTRATION_EMPLOYEES_ID = #{id3}
+        ]]>
+    </delete>
+	
+	<resultMap type="com.roxoft.buildingcompany.models.administration.Management" id="Management" autoMapping="false">
+		<id column="EMPLOYEES_ID" property="id1" />
+		<result column="EMPLOYEES_NAME" property="name" />
+		<result column="EMPLOYEES_SURNAME" property="surname" />
+		<result column="EMPLOYEES_JOB_TITLE" property="jobTitle" />
+		<result column="EMPLOYEES_ADDRESS_ID" property="address_id" />
+		<result column="EMPLOYEES_DATE_OF_BIRTH" property="dateOfBirth" />
+		<result column="MANAGEMENT_WORK_AUTO" property="numberWorkAuto" />
+	</resultMap>
+
+</mapper>

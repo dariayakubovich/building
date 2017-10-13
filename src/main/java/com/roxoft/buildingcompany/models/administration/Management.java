@@ -6,15 +6,10 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.roxoft.buildingcompany.main.address.Address;
-import com.roxoft.buildingcompany.main.salary.Salary;
-
 public class Management extends AdministrationEmployee {
 	private static final Logger lOGGER = LogManager.getLogger(Management.class);
 	private int administration_id;
 	private int id3;
-	
-
 	private String numberWorkAuto;
 
 	public int getAdministration_id() {
@@ -23,6 +18,14 @@ public class Management extends AdministrationEmployee {
 
 	public void setAdministration_id(int administration_id) {
 		this.administration_id = administration_id;
+	}
+
+	public int getId3() {
+		return id3;
+	}
+
+	public void setId3(int id3) {
+		this.id3 = id3;
 	}
 
 	@Override
@@ -45,25 +48,26 @@ public class Management extends AdministrationEmployee {
 
 	@Override
 	public String toString() {
-		return "Full Name: " + getName() + " " + getSurname() + ". Job title: " + getJobTitle() +  "\n" + ". Address: "
+		return "Full Name: " + getName() + " " + getSurname() + ". Job title: " + getJobTitle() + ".  \n" + "Address: "
 				+ getAddress().getStreet() + " street, build " + getAddress().getBuilding() + ", "
-				+ getAddress().getRegion().getRegionName() + ", " + getAddress().getCity() + ", " + getAddress().getCountry1()
-				+ ", " + getAddress().getZipcode() + "\n" + ", Work Auto - " + numberWorkAuto + ", Date of birth: "
-				+ getDateOfBirth() + "\n" + toStringSalary();
+				+ /* getAddress().getRegion().getRegionName() + */ getAddress().getReg() + ", " + getAddress().getCity()
+				+ ", " + getAddress().getCountry1() + ", " + getAddress().getZipcode() + " , \n" + "Work Auto - "
+				+ numberWorkAuto + ", Date of birth: " + getDateOfBirth() + "\n" + toStringSalary() + "\n";
 
 	}
-	
+
 	public List<String> toStringSalary() {
 		List<String> salaryString = new ArrayList<>();
 		String string = null;
 		for (int i = 0; i < getSalaryL().size(); i++) {
-		string =  "Salary= " + getSalaryL().get(i).getSalary() + " Month " + getSalaryL().get(i).getMonth() + " Year " +  getSalaryL().get(i).getYear() + "\n" ;
-		salaryString.add(string);
+			string = "Salary= " + getSalaryL().get(i).getSalary() + ", Month " + getSalaryL().get(i).getMonth()
+					+ ", Year " + getSalaryL().get(i).getYear();
+			salaryString.add(string);
 		}
 		return salaryString;
-	
+
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -101,14 +105,6 @@ public class Management extends AdministrationEmployee {
 	@Override
 	public void eat() {
 		lOGGER.info("Have meal at the restaurant");
-	}
-
-	public int getId3() {
-		return id3;
-	}
-
-	public void setId3(int id3) {
-		this.id3 = id3;
 	}
 
 }

@@ -2,7 +2,7 @@ package com.roxoft.buildingcompany.main.dao.idao;
 
 import java.util.List;
 
-import com.roxoft.buildingcompany.main.dao.jdbc.AbstractDao;
+import com.roxoft.buildingcompany.main.dao.AbstractDao;
 
 public interface IDao<T extends AbstractDao> {
 

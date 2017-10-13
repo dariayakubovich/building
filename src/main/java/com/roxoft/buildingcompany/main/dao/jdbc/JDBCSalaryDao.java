@@ -11,6 +11,7 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.roxoft.buildingcompany.main.dao.AbstractDao;
 import com.roxoft.buildingcompany.main.dao.ConnectionPool;
 import com.roxoft.buildingcompany.main.dao.idao.ISalaryDao;
 import com.roxoft.buildingcompany.main.salary.Salary;
@@ -111,7 +112,6 @@ public class JDBCSalaryDao extends AbstractDao implements ISalaryDao {
 		try {
 			statement = connection.createStatement();
 			result = statement.executeQuery("SELECT ID,SALARY,YEAR,MONTH,EMPLOYEES_ID FROM salary");
-			
 			while (result.next()) {
 				Salary salary = new Salary();
 				salary.setId(result.getInt("ID"));
@@ -121,11 +121,10 @@ public class JDBCSalaryDao extends AbstractDao implements ISalaryDao {
 				salary.setEmployee_id(result.getInt("EMPLOYEES_ID"));
 				salaryList.add(salary);
 			}
-
 		} catch (SQLException e) {
 			lOGGER.error(e.getMessage());
 		} finally {
-			close(connection);
+			ConnectionPool.getINSTANCE().putBackConnection(connection);
 			close(statement);
 		}
 		return salaryList;

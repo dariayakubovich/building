@@ -22,17 +22,18 @@
 			SELECT
 			    A.ID AS ADDRESS_ID,
 				A.COUNTRY AS ADDRESS_COUNTRY,
-				A.REGION_ID AS ADDRESS_REGION_ID,
 				A.CITY AS ADDRESS_CITY,
 				A.STREET AS ADDRESS_STREET,
 				A.BUILDING AS ADDRESS_BUILDING,
-				A.ZIPCODE AS ADDRESS_ZIPCODE
+				A.ZIPCODE AS ADDRESS_ZIPCODE,
+                R.NAME AS REGION_NAME
 			FROM
-				ADDRESS A
+				ADDRESS A left join region R on A.REGION_ID=R.ID  
 		]]>
+		
 	</sql>
 
-	<select id="getById" resultMap="Address">
+	<select id="getById" parameterType="int" resultMap="Address">
 		<include refid="getAddress" />
 		<![CDATA[
 			WHERE A.ID = #{id};
@@ -72,10 +73,11 @@
 	<resultMap type="com.roxoft.buildingcompany.main.address.Address" id="Address" autoMapping="false">
 		<id column="ADDRESS_ID" property="id" />
 		<result column="ADDRESS_COUNTRY" property="country1" />
-		<result column="ADDRESS_REGION_ID" property="region_id" />
 		<result column="ADDRESS_CITY" property="city" />
+		<result column="ADDRESS_STREET" property="street" />
 		<result column="ADDRESS_BUILDING" property="building" />
 		<result column="ADDRESS_ZIPCODE" property="zipcode" />
-	</resultMap>
+        <result column="REGION_NAME" property="reg" />
+		</resultMap>
 
 </mapper>

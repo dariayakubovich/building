@@ -1,29 +1,24 @@
-package com.roxoft.buildingcompany.main.dao.jdbc;
+package com.roxoft.buildingcompany.main.dao;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.roxoft.buildingcompany.main.address.Address;
 import com.roxoft.buildingcompany.main.address.Region;
 import com.roxoft.buildingcompany.main.dao.ConnectionPool;
-import com.roxoft.buildingcompany.main.salary.Salary;
 
 public abstract class AbstractDao {
 	private static final Logger lOGGER = LogManager.getLogger(AbstractDao.class);
 	public static SqlSessionFactory getSqlSessionFactory() {
-		String resource = "src\\main\\resources\\mybatis.xml";
+		String resource = "mybatis.xml";
 		InputStream inputStream = null;
 		try {
 			inputStream = Resources.getResourceAsStream(resource);
@@ -48,7 +43,7 @@ public abstract class AbstractDao {
 		try {
 			connection = ConnectionPool.getINSTANCE().getConnection();
 		} catch (InterruptedException e1) {
-			e1.printStackTrace();
+			lOGGER.error(e1.getMessage());
 		}
 		return connection;
 	}
@@ -83,43 +78,7 @@ public abstract class AbstractDao {
 		}
 		return date;
 	}
-
-	protected Address getAddressById(int address_id) {
-		Address address = null;
-		JDBCAddressDao addressDao = new JDBCAddressDao();
-		List<Address> addressList = addressDao.findAll();
-		switch (address_id) {
-		case 1:
-			address = addressList.get(0);
-			break;
-		case 2:
-			address = addressList.get(1);
-			break;
-		case 3:
-			address = addressList.get(2);
-			break;
-		case 4:
-			address = addressList.get(3);
-			break;
-		case 5:
-			address = addressList.get(4);
-			break;
-		default:
-			lOGGER.error("Wrong address id!");
-			break;
-		}
-		return address;
-	}
-
-	protected List<Salary> getSalaryFromListById(int emplId) {
-		JDBCSalaryDao salaryDao = new JDBCSalaryDao();
-		List<Salary> salaryList = salaryDao.findAll();
-		List<Salary> salaryL = new ArrayList<>();
-		for (int i = (3 * (emplId - 1)); i < ((3 * (emplId - 1)) + 3); i++) {
-			salaryL.add(salaryList.get(i));
-		}
-		return salaryL;
-	}
+	
 	protected Region getRegionById(int reg) {
 		Region region = null;
 		switch (reg) {

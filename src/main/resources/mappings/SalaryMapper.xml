@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.roxoft.buildingcompany.main.dao.mybatis.MyBatisSalaryDao">
+
+	<insert id="add" useGeneratedKeys="true" keyProperty="id">
+		<![CDATA[
+			INSERT INTO salary (SALARY,YEAR,MONTH,EMPLOYEES_ID)
+			VALUES (
+				#{salary},
+				#{year},
+				#{month},
+				#{employee_id}
+			)
+		]]>
+	</insert>
+
+	<sql id="getSalary">
+		<![CDATA[
+			SELECT
+			    S.ID AS SALARY_ID,
+				S.SALARY AS SALARY_SALARY,
+				S.YEAR AS SALARY_YEAR,
+				S.MONTH AS SALARY_MONTH,
+				S.EMPLOYEES_ID AS SALARY_EMPLOYEES_ID
+			FROM
+				SALARY S
+		]]>
+	</sql>
+
+	<select id="getById" resultMap="Salary">
+		<include refid="getSalary" />
+		<![CDATA[
+			WHERE S.ID = #{id};
+		]]>
+	</select>
+	
+	<select id="findAll" resultMap="Salary">
+		<include refid="getSalary" />
+	</select>
+
+	<update id="update">
+		<![CDATA[
+        	UPDATE
+        		SALARY
+          	SET
+          		SALARY = #{salary},
+				YEAR = #{year},
+				MONTH = #{month},
+				EMPLOYEES_ID = #{employee_id}
+          	WHERE
+			 	ID = #{id}
+        ]]>
+	</update>
+	
+	 <delete id="delete">
+        <![CDATA[
+        	DELETE
+          	FROM 
+          		SALARY
+          	WHERE
+          		ID = #{id}
+        ]]>
+    </delete>
+	
+	<resultMap type="com.roxoft.buildingcompany.main.salary.Salary" id="Salary" autoMapping="false">
+		<id column="SALARY_ID" property="id" />
+		<result column="SALARY_SALARY" property="salary" />
+		<result column="SALARY_YEAR" property="year" />
+		<result column="SALARY_MONTH" property="month" />
+		<result column="SALARY_EMPLOYEES_ID" property="employee_id" />
+	</resultMap>
+
+</mapper>

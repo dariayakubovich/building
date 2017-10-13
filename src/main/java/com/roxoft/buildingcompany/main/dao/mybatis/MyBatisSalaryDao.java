@@ -4,18 +4,18 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.roxoft.buildingcompany.main.address.Address;
 import com.roxoft.buildingcompany.main.dao.AbstractDao;
-import com.roxoft.buildingcompany.main.dao.idao.IAddressDao;
+import com.roxoft.buildingcompany.main.dao.idao.ISalaryDao;
+import com.roxoft.buildingcompany.main.salary.Salary;
 
-public class MyBatisAddressDao extends AbstractDao implements IAddressDao {
+public class MyBatisSalaryDao extends AbstractDao implements ISalaryDao {
 
 	@Override
-	public void add(Address address) {
+	public void add(Salary salary) {
 		SqlSession session = null;
 		try {
 			session = getSqlSessionFactory().openSession();
-			session.insert("com.roxoft.buildingcompany.main.dao.mybatis.MyBatisAddressDao.add", address);
+			session.insert("com.roxoft.buildingcompany.main.dao.mybatis.MyBatisSalaryDao.add", salary);
 			session.commit();
 		} finally {
 			close(session);
@@ -23,22 +23,22 @@ public class MyBatisAddressDao extends AbstractDao implements IAddressDao {
 	}
 
 	@Override
-	public Address getById(int id) {
+	public Salary getById(int id) {
 		SqlSession session = null;
 		try {
 			session = getSqlSessionFactory().openSession();
-			return session.selectOne("com.roxoft.buildingcompany.main.dao.mybatis.MyBatisAddressDao.getById", id);
+			return session.selectOne("com.roxoft.buildingcompany.main.dao.mybatis.MyBatisSalaryDao.getById", id);
 		} finally {
 			close(session);
 		}
 	}
 
 	@Override
-	public void update(Address address) {
+	public void update(Salary salary) {
 		SqlSession session = null;
 		try {
 			session = getSqlSessionFactory().openSession();
-			session.update("com.roxoft.buildingcompany.main.dao.mybatis.MyBatisAddressDao.update", address);
+			session.update("com.roxoft.buildingcompany.main.dao.mybatis.MyBatisSalaryDao.update", salary);
 			session.commit();
 		} finally {
 			close(session);
@@ -46,11 +46,11 @@ public class MyBatisAddressDao extends AbstractDao implements IAddressDao {
 	}
 
 	@Override
-	public void delete(Address address) {
+	public void delete(Salary salary) {
 		SqlSession session = null;
 		try {
 			session = getSqlSessionFactory().openSession();
-			session.delete("com.roxoft.buildingcompany.main.dao.mybatis.MyBatisAddressDao.delete", address);
+			session.delete("com.roxoft.buildingcompany.main.dao.mybatis.MyBatisSalaryDao.delete", salary);
 			session.commit();
 		} finally {
 			close(session);
@@ -58,11 +58,11 @@ public class MyBatisAddressDao extends AbstractDao implements IAddressDao {
 	}
 
 	@Override
-	public List<Address> findAll() {
+	public List<Salary> findAll() {
 		SqlSession session = null;
 		try {
 			session = getSqlSessionFactory().openSession();
-			return session.selectList("com.roxoft.buildingcompany.main.dao.mybatis.MyBatisAddressDao.findAll");
+			return session.selectList("com.roxoft.buildingcompany.main.dao.mybatis.MyBatisSalaryDao.findAll");
 		} finally {
 			close(session);
 		}

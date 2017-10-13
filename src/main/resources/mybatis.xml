@@ -9,15 +9,17 @@
 		<environment id="stag">
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
-				<property name="driver" value="${STAG.jdbc.driver}" />
-				<property name="url" value="${STAG.jdbc.url}" />
-				<property name="username" value="${STAG.jdbc.username}" />
-				<property name="password" value="${STAG.jdbc.password}" />
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
 			</dataSource>
 		</environment>
 	</environments>
 	<mappers>
 		<mapper resource="mappings/AddressMapper.xml" />
+		<mapper resource="mappings/SalaryMapper.xml" />
+		<mapper resource="mappings/ManagementMapper.xml" />
 		
 	</mappers>
 

@@ -12,7 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.roxoft.buildingcompany.main.address.Address;
-import com.roxoft.buildingcompany.main.address.Region;
+import com.roxoft.buildingcompany.main.dao.AbstractDao;
 import com.roxoft.buildingcompany.main.dao.ConnectionPool;
 import com.roxoft.buildingcompany.main.dao.idao.IAddressDao;
 
@@ -24,6 +24,7 @@ public class JDBCAddressDao extends AbstractDao implements IAddressDao {
 	public void add(Address address) {
 		connection = getConnection();
 		PreparedStatement preparedStatement = null;
+		PreparedStatement preparedStatement1 = null;
 		try {
 			preparedStatement = connection.prepareStatement(
 					"INSERT INTO  address (COUNTRY,REGION_ID,CITY,STREET,BUILDING,ZIPCODE) VALUES (?,?,?,?,?,?)");
@@ -34,11 +35,41 @@ public class JDBCAddressDao extends AbstractDao implements IAddressDao {
 			preparedStatement.setString(5, address.getBuilding());
 			preparedStatement.setString(6, address.getZipcode());
 			preparedStatement.executeUpdate();
+			preparedStatement1 = connection.prepareStatement("INSERT INTO  region (NAME) VALUE (?)");
+			preparedStatement1.setString(1, address.getReg());
 		} catch (SQLException e) {
 			lOGGER.error(e.getMessage());
 		} finally {
 			ConnectionPool.getINSTANCE().putBackConnection(connection);
 			close(preparedStatement);
+			close(preparedStatement1);
+		}
+	}
+
+	@Override
+	public void update(Address address) {
+		connection = getConnection();
+		PreparedStatement preparedStatement = null;
+		PreparedStatement preparedStatement1 = null;
+		try {
+			preparedStatement = connection.prepareStatement(
+					"UPDATE  address SET COUNTRY=?, REGION_ID=?, CITY=?, STREET=?,BUILDING=?, ZIPCODE=? WHERE ID=?");
+			preparedStatement.setString(1, address.getCountry1());
+			preparedStatement.setInt(2, address.getRegion_id());
+			preparedStatement.setString(3, address.getCity());
+			preparedStatement.setString(4, address.getStreet());
+			preparedStatement.setString(5, address.getBuilding());
+			preparedStatement.setString(6, address.getZipcode());
+			preparedStatement.setInt(7, address.getId());
+			preparedStatement.executeUpdate();
+			preparedStatement1 = connection.prepareStatement("UPDATE  region set NAME=? WHERE ID=?");
+			preparedStatement1.setString(1, address.getReg());
+		} catch (SQLException e) {
+			lOGGER.error(e.getMessage());
+		} finally {
+			ConnectionPool.getINSTANCE().putBackConnection(connection);
+			close(preparedStatement);
+			close(preparedStatement1);
 		}
 	}
 
@@ -49,18 +80,18 @@ public class JDBCAddressDao extends AbstractDao implements IAddressDao {
 		ResultSet result = null;
 		Address address = new Address();
 		try {
-			preparedStatement = connection.prepareStatement(
-					"SELECT ID,COUNTRY,REGION_ID,CITY,STREET,BUILDING,ZIPCODE FROM address WHERE ID=?");
+			preparedStatement = connection
+					.prepareStatement("SELECT * FROM ADDRESS A left join region R on A.REGION_ID=R.ID   WHERE A.ID=?");
 			preparedStatement.setInt(1, id);
 			result = preparedStatement.executeQuery();
 			if (result.next()) {
-				address.setId(result.getInt("ID"));
-				address.setCountry1(result.getString("COUNTRY"));
-				address.setRegion(getRegionById(result.getInt("REGION_ID")));
-				address.setCity(result.getString("CITY"));
-				address.setStreet(result.getString("STREET"));
-				address.setBuilding(result.getString("BUILDING"));
-				address.setZipcode(result.getString("ZIPCODE"));
+				address.setId(result.getInt("A.ID"));
+				address.setCountry1(result.getString("A.COUNTRY"));
+				address.setReg(result.getString("R.NAME"));
+				address.setCity(result.getString("A.CITY"));
+				address.setStreet(result.getString("A.STREET"));
+				address.setBuilding(result.getString("A.BUILDING"));
+				address.setZipcode(result.getString("A.ZIPCODE"));
 			}
 		} catch (SQLException e) {
 			lOGGER.error(e.getMessage());
@@ -73,41 +104,23 @@ public class JDBCAddressDao extends AbstractDao implements IAddressDao {
 	}
 
 	@Override
-	public void update(Address address) {
-		connection = getConnection();
-		PreparedStatement preparedStatement = null;
-		try {
-			preparedStatement = connection.prepareStatement(
-					"UPDATE  address SET COUNTRY=?, REGION_ID=?, CITY=?, STREET=?,BUILDING=?, ZIPCODE=? WHERE ID=?");
-			preparedStatement.setString(1, address.getCountry1());
-			preparedStatement.setInt(2, address.getRegion_id());
-			preparedStatement.setString(3, address.getCity());
-			preparedStatement.setString(4, address.getStreet());
-			preparedStatement.setString(5, address.getBuilding());
-			preparedStatement.setString(6, address.getZipcode());
-			preparedStatement.setInt(7, address.getId());
-			preparedStatement.executeUpdate();
-		} catch (SQLException e) {
-			lOGGER.error(e.getMessage());
-		} finally {
-			ConnectionPool.getINSTANCE().putBackConnection(connection);
-			close(preparedStatement);
-		}
-	}
-
-	@Override
 	public void delete(Address address) {
 		connection = getConnection();
 		PreparedStatement preparedStatement = null;
+		PreparedStatement preparedStatement1 = null;
 		try {
 			preparedStatement = connection.prepareStatement("DELETE FROM  address WHERE ID=?");
 			preparedStatement.setInt(1, address.getId());
 			preparedStatement.executeUpdate();
+			preparedStatement1 = connection.prepareStatement("DELETE FROM  region WHERE ID=?");
+			preparedStatement1.setInt(1, address.getRegion_id());
+			preparedStatement1.executeUpdate();
 		} catch (SQLException e) {
 			lOGGER.error(e.getMessage());
 		} finally {
 			ConnectionPool.getINSTANCE().putBackConnection(connection);
 			close(preparedStatement);
+			close(preparedStatement1);
 		}
 	}
 
@@ -119,20 +132,18 @@ public class JDBCAddressDao extends AbstractDao implements IAddressDao {
 		ResultSet result = null;
 		try {
 			statement = connection.createStatement();
-			result = statement.executeQuery("SELECT ID,COUNTRY,REGION_ID,CITY,STREET,BUILDING,ZIPCODE FROM address");
-
+			result = statement.executeQuery("SELECT * FROM ADDRESS A left join region R on A.REGION_ID=R.ID");
 			while (result.next()) {
 				Address address = new Address();
 				address.setId(result.getInt("ID"));
 				address.setCountry1(result.getString("COUNTRY"));
-				address.setRegion(getRegionById(result.getInt("REGION_ID")));
+				address.setReg(result.getString("NAME"));
 				address.setCity(result.getString("CITY"));
 				address.setStreet(result.getString("STREET"));
 				address.setBuilding(result.getString("BUILDING"));
 				address.setZipcode(result.getString("ZIPCODE"));
 				addressList.add(address);
 			}
-
 		} catch (SQLException e) {
 			lOGGER.error(e.getMessage());
 		} finally {
@@ -142,7 +153,5 @@ public class JDBCAddressDao extends AbstractDao implements IAddressDao {
 		}
 		return addressList;
 	}
-
-	
 
 }
