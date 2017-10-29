@@ -7,7 +7,7 @@ public class Address extends AbstractDao {
 	public Address() {
 	}
 
-	private static final String COUNTRY = "Republic of Belarus";
+	private static final String COUNTRY = "Republic of Belarus!";
 
 	private int id;
 	private String country1;
